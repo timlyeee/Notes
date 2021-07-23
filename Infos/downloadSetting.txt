@@ -1,0 +1,65 @@
+C/Users/Administrator/Downloads/mpg123-1.20.1
+PATH=usr/x86_64-w64-mingw32/bin
+D:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/bin/HostX64/x64/cl
+
+./configure --host=x86_64-w64-mingw32 --prefix=/usr/local/mpg123 --target=x86_64-w64-mingw32 \
+            CC=cl \
+            CXX=cl\
+            LD=link \
+            
+      make
+      make check
+
+vcpkg install openssl:x64-windows --x-install-root=C:/externals/openssl/vcpkg
+vcpkg install glad --triplet=x64-windows --x-install-root=E:\win64adaptation\externals64\glad_64
+/c/Users/Administrator/Downloads/mpg123-1.27.2/mpg123-1.27.2
+./configure --prefix=/e/mpg123manual --target=x86_64-w64-mingw32 CC=x86_64-w64-mingw32-gcc
+vcpkg search glslang
+
+
+glslang64 compilation:
+cmake -S "E:\win64adaptation\externals64\glsl_rebuild\glslang-11.4.0" -DCMAKE_INSTALL_PREFIX="$(pwd)/install" -DENABLE_SPVREMAPPER=OFF -DENABLE_OPT=OFF -G "Visual Studio 16 2019"  -A x64 -B "build.win"
+
+tbb:
+cmake -S /e/win64adaptation/externals64/tbb64/oneTBB -G "Visual Studio 16 2019"  -A x64 -B "build64"
+cmake --build . --config Debug --target install
+
+cmake -S /e/win64adaptation/externals64/tbb64/oneTBB -G "Visual Studio 16 2019"  -A x64 -B "build64"
+
+
+
+./vcpkg install openssl:x64-windows-static --x-install-root=E:/X64_ADAPT/vc-ssl-141
+./vcpkg install libvorbis:x64-windows --x-install-root=E:/X64_ADAPT/vc-vorbis-141
+./vcpkg install curl:x64-windows --x-install-root=E:/X64_ADAPT/vc-curl-141
+./vcpkg install ijg-libjpeg:x64-windows-static --x-install-root=E:/X64_ADAPT/vc-ijg-libjpeg-141
+./vcpkg install mpg123:x64-windows --x-install-root=E:/X64_ADAPT/vc-mpg123-141
+./vcpkg install libpng:x64-windows --x-install-root=E:/X64_ADAPT/vc-libpng-141
+./vcpkg install libwebp:x64-windows-static --x-install-root=E:/X64_ADAPT/vc-libwebp-141
+./vcpkg install zlib:x64-windows --x-install-root=E:/X64_ADAPT/vc-libzlib-141
+./vcpkg install libuv:x64-windows --x-install-root=E:/X64_ADAPT/vc-libuv-141
+./vcpkg install openal-soft:x64-windows --x-install-root=E:/X64_ADAPT/vc-openal-141
+./vcpkg install sqlite3:x64-windows --x-install-root=E:/X64_ADAPT/vc-sqlite3-141
+./vcpkg install SDL2:x64-windows --x-install-root=E:/X64_ADAPT/vc-sdl2-141
+./vcpkg install libiconv:x64-windows --x-install-root=E:/X64_ADAPT/vc-libiconv-141
+./vcpkg install tbb:x64-windows-static --x-install-root=E:/X64_ADAPT/vc-tbb-141
+
+
+|    libs    |   win32    |    x64     |  source
+| :--------: | :--------: | :--------: |  
+|  openssl   |   1.1.1g   |   1.1.1k   |  vcpkg
+| websockets |   2.4.2    |    ----    |
+|   mpg123   |     40     |     45     |
+|    curl    |   7.52.1   |   7.74.0   |
+|    png     |   1.6.37   |    ----    |
+|    sdl     |   2.0.10   |   2.0.14   |
+|    jpeg    |     9d     |    ----    |
+| freetype2  |   2.5.5    |   2.10.4   |
+|    libz    |   1.2.11   |    ----    |
+|     v8     | 6.0.286.52 |  9.1.269   |
+|   libuv    |   1.23.1   | 1.41.0-rel |
+|  sqlite3   |   3.35.4   |  3.7.15.1  |
+|    tbb     |   2020.2   |    ----    |
+| PVRVFrame  |   10.13    |    ----    |
+|   iconv    |   0x0109   |   0x0110   |
+|  glslang   |    unk     |   11.4.0   |
+|  physx   |   4.1.1    |    ----    |

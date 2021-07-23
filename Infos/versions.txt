@@ -1,0 +1,127 @@
+#### This file is to claim the version of third party libs that we use ####
+#### alse, the depend relationships in between ####
+
+websockets
+    mac: 2.1.0
+    win32: 2.1.0
+    ios: 2.1.0
+    android: 2.1.0
+    win64: 4.1.6#2
+
+openssl : (libwebsockets's depend)
+    mac: 1.1.1g
+    win32: 1.1.1g
+    ios: 1.1.1g
+    android: 1.1.1g
+    win64: 1.1.1k#2
+
+curl
+    mac: 7.52.1
+    win32: 7.52.1
+    win64: 7.74.0#6
+
+png/libpng
+    mac: 1.6.37
+    win32: 1.6.37
+    ios: 1.6.37
+    android: 1.6.37
+
+jpeg
+    mac: 9d
+    win32: 9d
+    win64: 9d
+    ios: 9d
+    android: 9d
+
+freetype2
+    mac: 2.6.3
+    win32: 2.5.5
+    ios: 2.6.3
+    android: 2.6.3
+    win64: 2.10.4
+
+libz=zlib : (libwebsockets's depend)(libuv's depend)(v8's depend)
+    mac: 1.2.11
+    win32: 1.2.11
+    ios: --
+    android: 1.2.11
+    win64: 1.2.11#10
+
+spidermonkey
+    mac: v52
+    win32: v52
+    ios: v52
+    android: v52
+
+anysdk
+    mac: --
+    win32: --
+    android: 2.2.5
+    ios: 2.2.5
+
+rapidjson
+    mac: 1.1.0
+    win32: 1.1.0
+    ios: 1.1.0
+    android: 1.1.0
+
+tinydir
+    mac: 1.2.1
+    win32: 1.2.1
+    android: 1.2.1
+    ios: 1.2.1
+
+v8
+    win32: 6.0.286.52
+    android: 6.0.286.52
+    win64: 9.1.269.0
+
+libuv : (libwebsockets's depend)
+    mac: 1.23.1
+    win32: 1.13.1
+    android: 1.13.1
+    ios: 1.23.1
+    win64: 1.41.0
+
+tbb
+    mac: 2020.2
+    win32: 2020.2
+    android: 2020.2
+    ios: 2020.2
+    win64: 2020.2
+
+PVRVFrame
+    mac: 10.13
+    win32: 10.13
+
+spirv_cross
+    mac: 2021.1.15
+    ios: 2021.1.15
+libiconv
+    win32: 1.9
+    win64: 1.16
+
+glew 
+    win64: 2.1.0
+
+mpg123
+    win64: 1.26.5
+    win32: 1.20.1
+
+
+vorbis : 
+    win64: 1.3.7#1
+
+ogg (vorbis's depends)
+    win64: auto generated
+
+webp:  WebP codec: library to encode and decode images
+    1.1.0#3
+
+openal
+    win64: 1.21.1
+
+SQLite3: a small, fast, self-contained, high-​reliability, full-featured, SQL database engine. 
+
+glslang:
+    win64: 

@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\engine-native"
+		},
+		{
+			"path": "..\\..\\engine"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"memory": "cpp",
+			"iosfwd": "cpp",
+			"charconv": "cpp",
+			"list": "cpp",
+			"future": "cpp",
+			"random": "cpp",
+			"regex": "cpp",
+			"sstream": "cpp",
+			"xlocnum": "cpp",
+			"locale": "cpp",
+			"utility": "cpp",
+			"cstdint": "cpp"
+		}
+	}
+}
