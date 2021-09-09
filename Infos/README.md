@@ -1,6 +1,43 @@
-# cocos第三方库
+# cocos第三方库适配注意事项
 
-## vcpkg编译时需注意
+## 序
+
+* 版本统一的方法
+* 各第三方库的编译选项
+  * tbb
+  * v8
+  * Physx
+  * PvrFrame
+  * Glslang
+  * vcpkg
+* 常见错误汇总
+  
+## 版本统一的方法
+
+目前的版本统一记录在Version.txt中，但是库之间的依赖关系并不明确甚至可以说很模糊。以下是比较明显的依赖情况：
+
+* libWebsocket编译需依赖Openssl和libuv，需要版本对齐
+* v8依赖自带的zlib，需要包含到第三方库
+
+如果要快速升级所有的库到最新版本，可以尝试使用vcpkg进行升级，它会将有依赖关系的库统一到相同版本。
+
+## 各第三方库的编译选项
+
+### tbb
+
+当前所使用的tbb的git仓库为
+
+> <https://github.com/wjakob/tbb>
+
+该仓库是基于OneTBB创建的，但是编译出的包体要小上很多。
+
+### v8
+
+v8所用的版本记录在version.txt中，编译选项则是在gn args ${GN_MAKE_DIR}所生成的args.gn文件中。该文件记录了编译选项，默认使用Ninja编译器构建编译。针对各平台的编译配置记录在3d-task的issue中。
+
+除了构建选项之外我们在不同的平台可以通过不同的编译器去生成对应项目进行编译。尽管它在编译器里面仍然用的是编译配置中选中的编译器，但这仍然方便了我们去定位问题，具体方法为启动编译的时候
+
+### vcpkg编译时需注意
 
 1. vcpkg下载编译的是默认为shared共享库，如果是静态库被下载的话应该用vcpkg install libuv:x64-windows-static的写法
 2. 不同版本的vcpkg下载的包版本也不同，可以在vcpkg的changelog.md中找到
@@ -140,7 +177,7 @@ cmake -S"D:/lixinTmp/test-cases-3d/native/engine/win32" -B"D:/lixinTmp/test-case
 
 cmake -S"E:/Cases/NewProject/native/engine/win32" -B"E:/Cases/NewProject/build/windows/proj" -G"Visual Studio 16 2019" -A"x64" -DRES_DIR="E:/Cases/NewProject/build/windows"
 
-cmake -S"E:/test-cases-3d/native/engine/win32" -B"E:/test-cases-3d/build/windows/proj" -G"Visual Studio 16 2019" -A"win32" -DRES_DIR="E:/test-cases-3d/build/windows"
+cmake -S"E:/Cases/test-cases-3d/native/engine/win32" -B"E:/Cases/test-cases-3d/build/windows/proj-x86" -G"Visual Studio 16 2019" -A"win32" -DRES_DIR="E:/Cases/test-cases-3d/build/windows"
 
 E:\Cases\NewProject\native\engine\win64
 
