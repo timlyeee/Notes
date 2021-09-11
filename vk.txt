@@ -1,8 +1,0 @@
-18:45:50 [ERROR]: VUID-VkWriteDescriptorSet-descriptorType-04152: Validation Error: [ VUID-VkWriteDescriptorSet-descriptorType-04152 ] 
-Object 0: handle = 0xd7acbf000000058b, type = VK_OBJECT_TYPE_UNKNOWN; | MessageID = 0xa46cfc69 | vkUpdateDescriptorSetWithTemplate() pDescriptorWrites[12] 
-failed write update validation for VkNonDispatchableHandle 0xd7acbf000000058b[] with error: Write update to VkNonDispatchableHandle 0xd7acbf000000058b[] 
-allocated with VkNonDispatchableHandle 0xdb987f00000000b6[] binding #12 failed with error message: 
-Attempted write update to image descriptor failed due to: Descriptor update with descriptorType VK_DESCRIPTOR_TYPE_STORAGE_IMAGE is being updated with
-invalid imageLayout VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL for image VkNonDispatchableHandle 0xe7f79a0000000005[] in imageView VkNonDispatchableHandle 0xcb3ee80000000007[]. 
-Allowed layouts are: VK_IMAGE_LAYOUT_GENERAL. The Vulkan spec states: If descriptorType is VK_DESCRIPTOR_TYPE_STORAGE_IMAGE the imageLayout member of each element of pImageInfo
- must be a member of the list given in Storage Image (https://vulkan.lunarg.com/doc/view/1.2.182.0/windows/1.2-extensions/vkspec.html#VUID-VkWriteDescriptorSet-descriptorType-04152)
