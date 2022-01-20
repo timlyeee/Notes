@@ -58,6 +58,7 @@ cmake -B build-x64 \
 ```
 
 windows端的编译选项为shared，是共享库而不是static导入。
+
 ### v8
 
 v8所用的版本记录在version.txt中，编译选项则是在gn args ${GN_MAKE_DIR}所生成的args.gn文件中。该文件记录了编译选项，默认使用Ninja编译器构建编译。针对各平台的编译配置记录在3d-task的issue中。
@@ -79,7 +80,7 @@ v8所用的版本记录在version.txt中，编译选项则是在gn args ${GN_MAK
 
 基于云潇fork的glslang库编译。
 
-> https://github.com/YunHsiao/glslang
+> <https://github.com/YunHsiao/glslang>
 
 其中有编译脚本，但基本选项如下。
 
@@ -96,6 +97,14 @@ cmake -DENABLE_HLSL=OFF \
 
 1. vcpkg下载编译的是默认为shared共享库，如果是静态库被下载的话应该用vcpkg install libuv:x64-windows-static的写法
 
+### mpg123
+
+音频库`mpg123`是纯`C`语言写的库，而其编译于windows上则需要配置一部分的环境，这一部分mingw可以协助完成。
+
+1. 下载 `msys2`，其中需要勾选mingw64的工具用来编译64位所需的动态库。并且安装路径中不要出现空格。
+2. 使用 `msys2-win64` 运行 `windows-builds.sh`，跟随配置 x86_64 8。
+3. 编译后的文件根据mog
+
 ## 常见错误
 
 1. vs编译时的librarian和linker会莫名其妙多出additional option导致编译的obj文件生成为x86版本，这是由于在template文件中没有设置目标平台导致的。
@@ -104,4 +113,5 @@ cmake -DENABLE_HLSL=OFF \
 
 > <https://stackoverflow.com/questions/5159353/how-can-i-get-rid-of-the-imp-prefix-in-the-linker-in-vc>
 原因是连接的类型不对，libwebsockets是链接到libuv的动态库而我们的libuv.lib是静态库。
+
 3. 运行时错误：需要更新external仓库中的source/khronos API，因为会有些兼容性问题。
